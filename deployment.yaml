@@ -1,0 +1,21 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: hellosocket
+  labels:
+    app: hellosocket
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hellosocket
+  template:
+    metadata:
+      labels:
+        app: hellosocket
+    spec:
+      containers:
+      - name: hellosocket
+        image: hellosocket:v3
+        ports:
+        - containerPort: 8001
